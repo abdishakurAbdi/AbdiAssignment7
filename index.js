@@ -217,7 +217,7 @@ app.post('/editCourseByCourseName', async (req, res) => {
     }
 });
 
-// This route allows the client to add a student to the database using the POST request
+// This route allows the client to delete a course from the database using the POST request
 app.post('/deleteCourseById', async (req, res) => {
     try {
         let course = await Course.findOne({_id: req.body.id})
@@ -235,7 +235,7 @@ app.post('/deleteCourseById', async (req, res) => {
     }
 });
 
-// This route allows the client to add a student to the database using the POST request
+// This route allows the client to delete a student from the database using the POST request
 app.post('/removeStudentById', async (req, res) => {
     try {
         let student = await Student.findOne({_id: req.body.id})
