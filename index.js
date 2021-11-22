@@ -53,7 +53,7 @@ const Student = mongoose.model("STUDENT");
 app.get('/getAllCourses', async (req, res) => {
     try {
         let courses = await Course.find({}).lean();
-        return res.status(200).json(courses);
+        return res.status(200).json({"courses": courses});
     }
     catch {
         return res.status(500);
@@ -68,7 +68,7 @@ app.get('/getAllCourses', async (req, res) => {
 app.get('/getAllStudents', async (req, res) => {
     try {
         let students = await Student.find({})
-        return res.status(200).json(students)
+        return res.status(200).json({"students": students})
 
     }
     catch {
